@@ -34,14 +34,15 @@ body{
 nav{
     position: fixed;
     isolation: isolate;
-    width: 110%;
+    width: 100%;
     max-width: var(--max-width);
     margin-inline: auto;
-    z-index: 9;
+    z-index: 8;
+    
 }
 .nav__header{
     padding: 1rem;
-    width: 107%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,7 +61,7 @@ nav{
 }
 .nav__logo img{
     display: flex;
-    max-width: 100px;
+    max-width: 50px;
 }
 .nav__logo span{
     display: none;
@@ -81,7 +82,7 @@ nav{
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    background-color: black;
+    background-color: rgb(253, 252, 252);
     transition: .5s;
     z-index: -1;
     transform: translateY(-100%);
@@ -116,8 +117,20 @@ nav{
 .header__content{
     overflow: hidden;
     text-align: center;
-
-}
+    background-image: url(images/bggimg2.png);
+    background-size:28%;
+    background-repeat: no-repeat;
+    background-position: 890px ;
+   padding-bottom: 100px;
+   opacity: 0;animation: slideIn  2s ease-in-out forwards;}
+    @keyframes slideIn{0%{opacity: 0;transform: translateX(-100%);}
+               100%{opacity: 1;transform: translateX(0);}
+               
+              
+               }
+               
+   
+   
 .header__content h2{
     position: relative;
     isolation: isolate;
@@ -131,10 +144,10 @@ nav{
 }
 .header__content h2::before{
     position: absolute;
-    
+    content: "";
     top: 50%;
     left: 0%;
-    transform: translate(calc(-100% -1rem),-50%);
+    transform: translate(calc(-100% - 1rem),-50%);
     height: 2px;
     width: 150%;
     background-color: black;
@@ -215,22 +228,26 @@ nav{
 
 @media (width> 768px){
     nav{
-        position: static;
-        padding: 2rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
+    position: static;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
     }
     .nav__header{
         padding: 0;
         background-color: transparent;
+
     }
     .nav__logo span{
         display: flex;
+
     }
     .nav__menu__btn{
         display: none;
+
     }
     .nav__links{
         position: static;
@@ -241,11 +258,9 @@ nav{
         background-color: transparent;
         transform: none;
     }
-
     .nav__links a:hover{
-        color: var(
-            --primary-color
-        );
-        
+        color: var(--primary-color);
+
     }
+
 }
